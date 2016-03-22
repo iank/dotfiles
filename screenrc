@@ -1,0 +1,6 @@
+hardstatus alwayslastline
+#hardstatus string '%{b kw}%H %{r}%1` %{w}| %{g}%c %{w}| %{y}%d.%m.%Y %{w}| %{g}%l %{w}| %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<'
+
+#hardstatus string "%>%{kg}%?%-Lw%?%{wb}%n*%f %t%?(%u)%?%{kg}%?%+Lw%?%<"
+hardstatus string "%>%{kg}%?%-Lw%?%n*%f %t%?(%u)%?%{kg}%?%+Lw%?%<"
+
