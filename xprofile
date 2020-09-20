@@ -1,7 +1,0 @@
-export GTK_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-export QT_IM_MODULE=fcitx
-export QT4_IM_MODULE=fcitx
-xinput set-prop 12 275 1
-xinput set-prop 12 'libinput Accel Speed' 0.2
-fcitx-autostart
