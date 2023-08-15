@@ -21,3 +21,7 @@ set relativenumber
 " set formatoptions alone wouldn't work here as it would be overridden by
 " filetype plugin
 au FileType * setl formatoptions-=ro
+
+" Don't highlight search and don't jump while I'm typing
+set nohlsearch
+set noincsearch
