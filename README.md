@@ -17,3 +17,7 @@ Remember to `:PackerInstall`
 ```
 :MasonInstall rust-analyzer codelldb
 ```
+
+## Clipboard
+
+Install `xclip` (WSL2, X11) or `wl-clipboard` (Wayland) and `"+y`/`"+p` will work.
