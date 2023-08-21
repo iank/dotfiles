@@ -2,6 +2,12 @@
 
 I use [YADM](https://yadm.io/docs/getting_started) to manage these.
 
+# virtualenvwrapper
+
+```
+$ pip install virtualenvwrapper
+```
+
 # nvim
 
 I've tried to set this up in such a way that the .vimrc has basic settings
