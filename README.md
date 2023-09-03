@@ -18,7 +18,7 @@ having to maintain variants.
 
 ## Plugins
 
-Remember to `:PackerInstall`
+Remember to `:PackerInstall`, maybe `:PackerCompile` as well
 
 ```
 :MasonInstall rust-analyzer codelldb
@@ -27,3 +27,13 @@ Remember to `:PackerInstall`
 ## Clipboard
 
 Install `xclip` (WSL2, X11) or `wl-clipboard` (Wayland) and `"+y`/`"+p` will work.
+
+# tmux
+
+## TPM
+
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+prefix + I
