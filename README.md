@@ -37,3 +37,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 prefix + I
+
+## Font
+
+[CaskaydiaCoveNerdFont-Regular](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode)
