@@ -20,10 +20,6 @@ having to maintain variants.
 
 Remember to `:PackerInstall`, maybe `:PackerCompile` as well
 
-```
-:MasonInstall rust-analyzer codelldb
-```
-
 ## Clipboard
 
 Install `xclip` (WSL2, X11) or `wl-clipboard` (Wayland) and `"+y`/`"+p` will work.
@@ -40,4 +36,14 @@ prefix + I
 
 ## Font
 
-[CaskaydiaCoveNerdFont-Regular](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode)
+[HackNerdFont-Regular](https://github.com/ryanoasis/nerd-fonts/releases)
+
+On Windows, right click and install a .ttf
+
+On Ubuntu, place in ~/.fonts and run `fc-cache -fv`
+
+# Misc
+
+```
+dconf write "/org/gnome/desktop/input-sources/xkb-options" "[ 'caps:swapescape']" `
+```
