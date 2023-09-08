@@ -1,4 +1,5 @@
 vim.cmd.source("~/.vimrc")
+vim.opt.mouse = "a"
 
 -- Bootstrap packer
 local ensure_packer = function()
@@ -33,6 +34,23 @@ require('packer').startup(function(use)
     vim.keymap.set('n', "<M-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
 
   end}
+
+  use { "ojroques/vim-oscyank",
+    config = function()
+      -- Should be accompanied by a setting clipboard in tmux.conf, also see
+      -- https://github.com/ojroques/vim-oscyank#the-plugin-does-not-work-with-tmux
+      vim.g.oscyank_term = "default"
+      vim.g.oscyank_max_length = 0  -- unlimited
+      -- see https://github.com/ojroques/vim-oscyank#copying-from-a-register
+      vim.api.nvim_create_autocmd("TextYankPost", {
+        pattern = "*",
+        callback = function()
+          if vim.v.event.operator == "y" and vim.v.event.regname == "+" then
+            vim.cmd('OSCYankRegister +')
+          end
+        end,
+      })
+    end}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

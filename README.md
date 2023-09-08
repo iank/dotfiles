@@ -20,10 +20,6 @@ having to maintain variants.
 
 Remember to `:PackerInstall`, maybe `:PackerCompile` as well
 
-## Clipboard
-
-Install `xclip` (WSL2, X11) or `wl-clipboard` (Wayland) and `"+y`/`"+p` will work.
-
 # tmux
 
 ## TPM
@@ -47,3 +43,9 @@ On Ubuntu, place in ~/.fonts and run `fc-cache -fv`
 ```
 dconf write "/org/gnome/desktop/input-sources/xkb-options" "[ 'caps:swapescape']" `
 ```
+
+# Clipboard
+
+I use OSC52 in vim/tmux. gnome-terminal doesn't support it, so I use xterm or Windows Terminal
+
+May need to xrdb -merge ~/.Xresources
