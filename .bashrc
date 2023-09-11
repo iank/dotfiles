@@ -79,7 +79,10 @@ HISTFILESIZE=20000
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV=/home/ian/.local/bin/virtualenv
-source ~/.local/bin/virtualenvwrapper.sh
+
+if [ -f ~/.local/bin/virtualenvwrapper.sh ]; then
+    source ~/.local/bin/virtualenvwrapper.sh
+fi
 
 # Editor
 NEOVIM_PATH=$HOME/nvim-linux64/bin/nvim
@@ -92,4 +95,8 @@ fi
 unset NEOVIM_PATH
 
 PATH=$PATH:$HOME/.local/bin
-. "$HOME/.cargo/env"
+
+
+if [ -f ~/.cargo/env ]; then
+    . "$HOME/.cargo/env"
+fi
