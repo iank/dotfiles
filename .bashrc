@@ -100,3 +100,5 @@ PATH=$PATH:$HOME/.local/bin
 if [ -f ~/.cargo/env ]; then
     . "$HOME/.cargo/env"
 fi
+
+shopt -s histverify
