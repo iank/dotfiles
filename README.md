@@ -5,7 +5,7 @@ I use [YADM](https://yadm.io/docs/getting_started) to manage these.
 # virtualenvwrapper
 
 ```
-$ pip install virtualenvwrapper
+$ sudo apt install python3-virtualenvwrapper
 ```
 
 # nvim
@@ -34,9 +34,22 @@ prefix + I
 
 [HackNerdFont-Regular](https://github.com/ryanoasis/nerd-fonts/releases)
 
+On Ubuntu, place in ~/.fonts and run `fc-cache -fv`
+
 On Windows, right click and install a .ttf
 
-On Ubuntu, place in ~/.fonts and run `fc-cache -fv`
+In Windows Terminal preferences, open the JSON file and insert into profile:
+
+```
+                "font":
+                {
+                  "face": "CaskaydiaCove Nerd Font Mono",
+                  "features": {
+                    "liga": 0,
+                    "calt": 0
+                  }
+                },
+```
 
 # Misc
 
