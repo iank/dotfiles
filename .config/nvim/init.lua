@@ -35,6 +35,11 @@ require('packer').startup(function(use)
 
   end}
 
+  use {
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
   use { "ojroques/vim-oscyank",
     config = function()
       -- Should be accompanied by a setting clipboard in tmux.conf, also see
