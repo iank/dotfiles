@@ -85,7 +85,7 @@ if [ -f ~/.local/bin/virtualenvwrapper.sh ]; then
 fi
 
 # Editor
-NEOVIM_PATH=$HOME/nvim-linux64/bin/nvim
+NEOVIM_PATH=$HOME/nvim-linux-x86_64/bin/nvim
 if [ -x $NEOVIM_PATH ]; then
     alias vi=$NEOVIM_PATH
     export EDITOR=$NEOVIM_PATH
