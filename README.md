@@ -2,10 +2,14 @@
 
 I use [YADM](https://yadm.io/docs/getting_started) to manage these.
 
-# virtualenvwrapper
+# rustup
+
+[rustup](https://rustup.rs)
+
+# Packages
 
 ```
-$ sudo apt install python3-virtualenvwrapper
+$ sudo apt install python3-virtualenvwrapper fzf tree tmux ripgrep
 ```
 
 # nvim
