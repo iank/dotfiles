@@ -13,7 +13,7 @@ set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 let mapleader = ","
 
 " Relative line numbers and a mapping to toggle it
-set relativenumber
+" set relativenumber
 nnoremap <leader>rn :set relativenumber!<CR>
 
 " No mouse support
