@@ -157,14 +157,24 @@ bindsym F9 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute
 #bindsym F6 exec --no-startup-id /home/ian/local/bin/backlight.sh --dec 20 # decrease screen brightness
 
 exec --no-startup-id feh --bg-fill --no-xinerama ~/.config/i3/bg.png
-exec --no-startup-id xrandr --output DP-2 --left-of HDMI-0
 exec --no-startup-id ibus-daemon --xim -d -r
+exec --no-startup-id xrandr --output DP-2 --left-of HDMI-0
+workspace 1 output DP-2
+workspace 5 output HDMI-1
 
 # Lock screen
 bindsym $mod+Delete exec --no-startup-id i3lock
 
-for_window [title="output"] floating enable
-for_window [title="Cat Viewer"] floating enable
-
 # Cycle between monitors on alt+tab
 bindsym Mod1+Tab focus output right
+
+# Make some windows float
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+# Vivado
+for_window [title="JidePopup"] floating enable
