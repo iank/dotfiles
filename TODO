@@ -1,0 +1,2 @@
+- There has got to be a way to just use $HOME instead of constructing the homeDir path in flake.nix
+- ditto username, system detection
