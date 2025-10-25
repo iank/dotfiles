@@ -1,46 +1,22 @@
 # Dotfiles
 
-I use [YADM](https://yadm.io/docs/getting_started) to manage these.
+Install the Nix package manager:
 
-# rustup
-
-[rustup](https://rustup.rs)
-
-# Packages
-
-```
-$ sudo apt install python3-virtualenvwrapper fzf tree tmux ripgrep
+```bash
+sh <(curl -L https://nixos.org/nix/install) --daemon
+mkdir -p ~/.config/nix
+echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 ```
 
-# nvim
+Activate:
 
 ```
-https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+nix run github:nix-community/home-manager -- switch --flake .
 ```
-
-I've tried to set this up in such a way that the .vimrc has basic settings
-while plugins and anything complicated or heavy goes in neovim's configuration.
-This way I can hopefully share the same dotfiles repository on both full-on
-development environments and also embedded or temporary environments without
-having to maintain variants.
-
-## Plugins
-
-Remember to `:PackerInstall`, maybe `:PackerCompile` as well
-
-# tmux
-
-## TPM
-
-```
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-prefix + I
 
 ## Font
 
-[HackNerdFont-Regular](https://github.com/ryanoasis/nerd-fonts/releases)
+[HackNerdFont-Regular](https://www.nerdfonts.com/font-downloads)
 
 On Ubuntu, place in ~/.fonts and run `fc-cache -fv`
 
