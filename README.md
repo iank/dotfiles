@@ -11,6 +11,7 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 Activate:
 
 ```
+git clone git@github.com:iank/dotfiles.git ~/.dotfiles && cd ~/.dotfiles
 nix run github:nix-community/home-manager -- switch --flake .
 ```
 
