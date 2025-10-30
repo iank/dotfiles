@@ -17,6 +17,12 @@ nix run github:nix-community/home-manager -- switch --flake .
 
 (May need to also pass -b backup on the first run)
 
+Subsequent updates:
+
+```
+home-manager switch --flake .
+```
+
 ## Font
 
 [HackNerdFont-Regular](https://www.nerdfonts.com/font-downloads)
