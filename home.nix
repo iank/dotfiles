@@ -19,10 +19,7 @@
     black
     ruff
     llvmPackages_20.clang-tools
-    nerd-fonts.hack
   ];
-
-  fonts.fontconfig.enable = true;
 
   home.file.".vimrc".source = ./config/vimrc;
   home.file.".config/fzf/key-bindings.bash".source = ./config/fzf/key-bindings.bash;
@@ -77,18 +74,4 @@
     '';
   };
 
-  xresources.properties = {
-    "XTerm*disallowedWindowOps" = "20,21,SetXprop";
-    "XTerm*selectToClipboard" = "true";
-    "XTerm*Background" = "black";
-    "XTerm*Foreground" = "grey";
-    "XTerm*faceName" = "Hack Nerd Font";
-    "XTerm*faceSize" = "12";
-    "XTerm*metaSendsEscape" = "true";
-    "XTerm*vt100.translations" = ''#override \
-        Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
-        Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
-    '';
-    "XTerm*termName" = "xterm-256color";
-  };
 }
