@@ -1,10 +1,10 @@
 set nocompatible
-filetype plugin indent on
 
-" Language server plugin
-call plug#begin()
-Plug 'prabirshrestha/vim-lsp'
-call plug#end()
+if has('nvim')
+    call plug#begin()
+    Plug 'neovim/nvim-lspconfig'
+    call plug#end()
+endif
 
 " Use 4 spaces
 set expandtab
@@ -18,6 +18,9 @@ set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 " Relative line numbers.
 set relativenumber
 
+" No mouse support
+set mouse=
+
 " Don't insert comment leader if I hit 'o' or <Enter>.
 " set formatoptions alone wouldn't work here as it would be overridden by
 " filetype plugin
@@ -26,12 +29,3 @@ au FileType * setl formatoptions-=ro
 " Don't highlight search and don't jump while I'm typing
 set nohlsearch
 set noincsearch
-
-" Set up verilog language server if available
-if executable('svls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'svls',
-        \ 'cmd': {server_info->['svls']},
-        \ 'whitelist': ['systemverilog'],
-        \ })
-endif
