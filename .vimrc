@@ -1,11 +1,5 @@
 set nocompatible
 
-if has('nvim')
-    call plug#begin()
-    Plug 'neovim/nvim-lspconfig'
-    call plug#end()
-endif
-
 " Use 4 spaces
 set expandtab
 set tabstop=4
