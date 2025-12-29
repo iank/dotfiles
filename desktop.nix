@@ -8,6 +8,7 @@
     steam
     lunatask
     signal-desktop
+    nix-index
   ];
 
   fonts.fontconfig.enable = true;
