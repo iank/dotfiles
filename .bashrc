@@ -81,6 +81,12 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV=/home/ian/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 
-# Neovim
-alias vi=$HOME/nvim-linux64/bin/nvim
-export EDITOR=$HOME/nvim-linux64/bin/nvim
+# Editor
+NEOVIM_PATH=$HOME/nvim-linux64/bin/nvim
+if [ -x $NEOVIM_PATH ]; then
+    alias vi=$NEOVIM_PATH
+    export EDITOR=$NEOVIM_PATH
+else
+    export EDITOR=vim
+fi
+unset NEOVIM_PATH
