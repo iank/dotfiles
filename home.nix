@@ -14,13 +14,15 @@
     fzf
     bc
     coreutils
+    neovim
   ];
 
   home.file.".vimrc".source = ./config/vimrc;
-  home.file.".config/nvim".source = ./config/nvim;
+#  home.file.".config/nvim".source = ./config/nvim;
   home.file.".config/fzf/key-bindings.bash".source = ./config/fzf/key-bindings.bash;
   home.file.".Xresources".source = ./config/Xresources;
   home.file.".config/i3/config".source = ./config/i3/config;
+  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/nvim";
 
   programs.tmux = {
     enable = true;
@@ -35,15 +37,10 @@
     '';
   };
 
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    defaultEditor = true;
-  };
-
   home.shellAliases = {
     ls = "ls --color=auto";
+    vi = "nvim";
+    vim = "nvim";
   };
 
   programs.bash = {
@@ -64,6 +61,8 @@
       if [ -f ~/.config/fzf/key-bindings.bash ]; then
         source ~/.config/fzf/key-bindings.bash
       fi
+
+      export EDITOR=nvim
     '';
     bashrcExtra = ''
     '';
