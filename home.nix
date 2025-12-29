@@ -63,6 +63,12 @@
       . ~/.nix-profile/share/git/contrib/completion/git-completion.bash
       export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\[\033[01;32m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
 
+      # OSC133
+      prompt_marker() {
+          printf '\e]133;A\e\\'
+      }
+      PROMPT_COMMAND=prompt_marker
+
       # fzf ^R, etc
       if [ -f ~/.config/fzf/key-bindings.bash ]; then
         source ~/.config/fzf/key-bindings.bash
