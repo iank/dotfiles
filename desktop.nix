@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     nerd-fonts.hack
     steam
+    lunatask
   ];
 
   fonts.fontconfig.enable = true;
