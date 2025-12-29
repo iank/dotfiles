@@ -7,6 +7,7 @@
     nerd-fonts.hack
     steam
     lunatask
+    signal-desktop
   ];
 
   fonts.fontconfig.enable = true;
