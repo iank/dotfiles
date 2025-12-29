@@ -11,6 +11,7 @@
     neovim
     tmux
     git
+    git-lfs
     ripgrep
     fzf
     bc
