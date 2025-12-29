@@ -90,3 +90,5 @@ else
     export EDITOR=vim
 fi
 unset NEOVIM_PATH
+
+PATH=$PATH:$HOME/.local/bin
