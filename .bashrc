@@ -102,3 +102,5 @@ if [ -f ~/.cargo/env ]; then
 fi
 
 shopt -s histverify
+
+source ~/.config/fzf/key-bindings.bash
