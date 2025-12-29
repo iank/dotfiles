@@ -3,12 +3,6 @@ return {
         'nvim-telescope/telescope.nvim',
         dependencies = {'nvim-lua/plenary.nvim'}
     },
-    {
-        "m4xshen/hardtime.nvim",
-        lazy = false,
-        dependencies = { "MunifTanjim/nui.nvim" },
-        opts = {},
-    },
     { 'alexghergh/nvim-tmux-navigation', config = function()
         local nvim_tmux_nav = require('nvim-tmux-navigation')
 
