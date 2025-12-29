@@ -1,5 +1,5 @@
 vim.cmd.source("~/.vimrc")
-vim.opt.mouse = "a"
+-- vim.opt.mouse = "a"
 
 -- Bootstrap packer
 local ensure_packer = function()
