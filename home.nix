@@ -15,10 +15,12 @@
     bc
     coreutils
     neovim
+    black
+    ruff
+    llvmPackages_20.clang-tools
   ];
 
   home.file.".vimrc".source = ./config/vimrc;
-#  home.file.".config/nvim".source = ./config/nvim;
   home.file.".config/fzf/key-bindings.bash".source = ./config/fzf/key-bindings.bash;
   home.file.".Xresources".source = ./config/Xresources;
   home.file.".config/i3/config".source = ./config/i3/config;
