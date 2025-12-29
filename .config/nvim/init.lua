@@ -18,12 +18,6 @@ local packer_bootstrap = ensure_packer()
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-
-  use 'neovim/nvim-lspconfig'
-  use 'simrat39/rust-tools.nvim'
-
   -- nvim / tmux navigator config
   use { 'alexghergh/nvim-tmux-navigation', config = function()
 
@@ -46,25 +40,3 @@ require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
-
--- Mason Setup
-require("mason").setup()
-require("mason-lspconfig").setup()
-
--- Set up rust
-local rt = require("rust-tools")
-
-rt.setup({
-  server = {
-    on_attach = function(_, bufnr)
-      -- Hover actions
-      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions,
-                    { buffer = bufnr })
-      -- Code action groups
-      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group,
-                    { buffer = bufnr })
-    end,
-  },
-})
-
-
