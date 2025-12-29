@@ -165,3 +165,6 @@ bindsym $mod+Delete exec --no-startup-id i3lock
 
 for_window [title="output"] floating enable
 for_window [title="Cat Viewer"] floating enable
+
+# Cycle between monitors on alt+tab
+bindsym Mod1+Tab focus output right
