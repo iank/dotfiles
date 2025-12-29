@@ -8,6 +8,7 @@
     steam
     lunatask
     signal-desktop
+    discord
     nix-index
   ];
 
