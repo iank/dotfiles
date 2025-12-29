@@ -3,6 +3,18 @@ return {
         'nvim-telescope/telescope.nvim',
         dependencies = {'nvim-lua/plenary.nvim'}
     },
+    {
+      'Julian/lean.nvim',
+      event = { 'BufReadPre *.lean', 'BufNewFile *.lean' },
+      dependencies = {
+        'nvim-lua/plenary.nvim',
+      },
+
+      ---@type lean.Config
+      opts = {
+        mappings = true,
+      }
+    },
     { 'alexghergh/nvim-tmux-navigation', config = function()
         local nvim_tmux_nav = require('nvim-tmux-navigation')
 
