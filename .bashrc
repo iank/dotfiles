@@ -92,3 +92,4 @@ fi
 unset NEOVIM_PATH
 
 PATH=$PATH:$HOME/.local/bin
+. "$HOME/.cargo/env"
