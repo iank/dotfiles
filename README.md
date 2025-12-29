@@ -10,6 +10,10 @@ $ sudo apt install python3-virtualenvwrapper
 
 # nvim
 
+```
+https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+```
+
 I've tried to set this up in such a way that the .vimrc has basic settings
 while plugins and anything complicated or heavy goes in neovim's configuration.
 This way I can hopefully share the same dotfiles repository on both full-on
