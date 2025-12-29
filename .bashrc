@@ -78,10 +78,15 @@ HISTFILESIZE=20000
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_VIRTUALENV=/home/ian/.local/bin/virtualenv
 
 if [ -f ~/.local/bin/virtualenvwrapper.sh ]; then
+    export VIRTUALENVWRAPPER_VIRTUALENV=/home/ian/.local/bin/virtualenv
     source ~/.local/bin/virtualenvwrapper.sh
+fi
+
+if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 fi
 
 # Editor
@@ -104,3 +109,4 @@ fi
 shopt -s histverify
 
 source ~/.config/fzf/key-bindings.bash
+source ~/.config/keys.sh
