@@ -15,6 +15,8 @@ git clone git@github.com:iank/dotfiles.git ~/.dotfiles && cd ~/.dotfiles
 nix run github:nix-community/home-manager -- switch --flake .
 ```
 
+(May need to also pass -b backup on the first run)
+
 ## Font
 
 [HackNerdFont-Regular](https://www.nerdfonts.com/font-downloads)
