@@ -19,11 +19,13 @@
     black
     ruff
     llvmPackages_20.clang-tools
+    nerd-fonts.hack
   ];
+
+  fonts.fontconfig.enable = true;
 
   home.file.".vimrc".source = ./config/vimrc;
   home.file.".config/fzf/key-bindings.bash".source = ./config/fzf/key-bindings.bash;
-  home.file.".Xresources".source = ./config/Xresources;
   home.file.".config/i3/config".source = ./config/i3/config;
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/nvim";
 
@@ -55,7 +57,9 @@
     ];
     historyControl = [ "ignoreboth" ];
     initExtra = ''
-      . ~/.nix-profile/etc/profile.d/nix.sh
+      if [ -f ~/.nix-profile/etc/profile.d/nix.sh ]; then
+        source ~/.nix-profile/etc/profile.d/nix.sh
+      fi
 
       # Show git branch status in terminal shell.
       . ~/.nix-profile/share/git/contrib/completion/git-prompt.sh
@@ -71,5 +75,20 @@
     '';
     bashrcExtra = ''
     '';
+  };
+
+  xresources.properties = {
+    "XTerm*disallowedWindowOps" = "20,21,SetXprop";
+    "XTerm*selectToClipboard" = "true";
+    "XTerm*Background" = "black";
+    "XTerm*Foreground" = "grey";
+    "XTerm*faceName" = "Hack Nerd Font";
+    "XTerm*faceSize" = "12";
+    "XTerm*metaSendsEscape" = "true";
+    "XTerm*vt100.translations" = ''#override \
+        Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+        Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
+    '';
+    "XTerm*termName" = "xterm-256color";
   };
 }
