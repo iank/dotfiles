@@ -9,8 +9,12 @@ set shiftwidth=4
 set list
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 
-" Relative line numbers.
+" Remap leader
+let mapleader = ","
+
+" Relative line numbers and a mapping to toggle it
 set relativenumber
+nnoremap <leader>rn :set relativenumber!<CR>
 
 " No mouse support
 set mouse=
