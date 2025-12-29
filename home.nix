@@ -8,6 +8,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    neovim
     tmux
     git
     ripgrep
@@ -54,6 +55,8 @@
     ];
     historyControl = [ "ignoreboth" ];
     initExtra = ''
+      . ~/.nix-profile/etc/profile.d/nix.sh
+
       # Show git branch status in terminal shell.
       . ~/.nix-profile/share/git/contrib/completion/git-prompt.sh
       . ~/.nix-profile/share/git/contrib/completion/git-completion.bash
