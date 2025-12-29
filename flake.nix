@@ -13,7 +13,7 @@
   let
     mkHome = system: username: module:
       let
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
         homeDir = "/home/${username}";
       in
         home-manager.lib.homeManagerConfiguration {

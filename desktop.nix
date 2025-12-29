@@ -5,6 +5,7 @@
 
   home.packages = with pkgs; [
     nerd-fonts.hack
+    steam
   ];
 
   fonts.fontconfig.enable = true;
