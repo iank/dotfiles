@@ -24,7 +24,6 @@
 
   home.file.".vimrc".source = ./config/vimrc;
   home.file.".config/fzf/key-bindings.bash".source = ./config/fzf/key-bindings.bash;
-  home.file.".config/i3/config".source = ./config/i3/config;
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/nvim";
 
   programs.tmux = {
