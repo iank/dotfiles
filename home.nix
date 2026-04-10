@@ -19,7 +19,7 @@
     neovim
     black
     ruff
-    llvmPackages_20.clang-tools
+    nixfmt
   ];
 
   home.file.".vimrc".source = ./config/vimrc;
