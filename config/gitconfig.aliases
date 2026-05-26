@@ -1,0 +1,7 @@
+[alias]
+    ca = "commit --amend"
+    st = status
+    si = "status --ignored"
+    d = diff
+    dc = "diff --cached"
+    co = checkout
