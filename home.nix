@@ -20,6 +20,7 @@
     black
     ruff
     nixfmt
+    verible
   ];
 
   home.file.".gitconfig.aliases".source = ./config/gitconfig.aliases;

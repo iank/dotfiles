@@ -17,3 +17,9 @@ vim.g.clipboard = {
     ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
   },
 }
+
+vim.lsp.enable('verible')
+vim.diagnostic.config({
+    virtual_text = true,
+})
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
