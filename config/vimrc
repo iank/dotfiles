@@ -36,3 +36,9 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Use two spaces for .nix files since I guess that's the done thing
 autocmd FileType nix setlocal shiftwidth=2 tabstop=2 expandtab
+
+" vimdiff colors
+highlight DiffAdd    cterm=NONE ctermfg=15 ctermbg=22  gui=NONE guifg=#ffffff guibg=#1e4620
+highlight DiffDelete cterm=NONE ctermfg=15 ctermbg=52  gui=NONE guifg=#ffffff guibg=#5f1e1e
+highlight DiffChange cterm=NONE ctermfg=15 ctermbg=236 gui=NONE guifg=#ffffff guibg=#303030
+highlight DiffText   cterm=NONE ctermfg=16 ctermbg=214 gui=NONE guifg=#000000 guibg=#ffaf00
