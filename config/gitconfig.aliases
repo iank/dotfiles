@@ -2,6 +2,7 @@
     ca = "commit --amend"
     st = status
     si = "status --ignored"
+    sti = "status --ignored"
     d = diff
     dc = "diff --cached"
     co = checkout
