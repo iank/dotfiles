@@ -13,6 +13,7 @@
     git
     git-lfs
     ripgrep
+    fd
     fzf
     bc
     coreutils
