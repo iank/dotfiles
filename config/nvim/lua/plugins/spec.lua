@@ -35,4 +35,11 @@ return {
             { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" }
         }
     },
+    {
+        'MeanderingProgrammer/render-markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' },
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {},
+    },
 }
