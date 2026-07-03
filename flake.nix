@@ -9,23 +9,62 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
-  let
-    mkHome = system: username: module:
-      let
-        pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
-        homeDir = "/home/${username}";
-      in
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
+    let
+      mkHome =
+        {
+          system,
+          username,
+          homeDir ? "/home/${username}",
+          modules,
+        }:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ module ];
+          inherit modules;
           extraSpecialArgs = { inherit username homeDir; };
         };
-  in {
-    homeConfigurations = {
-      ian = mkHome "x86_64-linux" "ian" ./home.nix;
-      ian-arm = mkHome "aarch64-linux" "ian" ./home.nix;
-      ian-desktop = mkHome "x86_64-linux" "ian" ./desktop.nix;
+      mkImpureHome =
+        modules:
+        mkHome {
+          system = builtins.currentSystem;
+          username = builtins.getEnv "USER";
+          homeDir = builtins.getEnv "HOME";
+          inherit modules;
+        };
+    in
+    {
+      # expose mkHome, homeModules so private flakes can layer configs on top of this one
+      lib = { inherit mkHome; };
+      homeModules = {
+        base = ./home.nix;
+        desktop = ./desktop.nix;
+      };
+
+      homeConfigurations = {
+        default = mkHome {
+          system = "x86_64-linux";
+          username = "ian";
+          modules = [ ./home.nix ];
+        };
+        desktop = mkHome {
+          system = "x86_64-linux";
+          username = "ian";
+          modules = [ ./desktop.nix ];
+        };
+
+        auto = mkImpureHome [ ./home.nix ];
+      };
     };
-  };
 }

@@ -5,11 +5,6 @@
 
   home.packages = with pkgs; [
     nerd-fonts.hack
-    steam
-    lunatask
-    signal-desktop
-    discord
-    nix-index
   ];
 
   fonts.fontconfig.enable = true;
@@ -22,9 +17,10 @@
     "XTerm*faceName" = "Hack Nerd Font";
     "XTerm*faceSize" = "12";
     "XTerm*metaSendsEscape" = "true";
-    "XTerm*vt100.translations" = ''#override \
-        Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
-        Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
+    "XTerm*vt100.translations" = ''
+      #override \
+              Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+              Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
     '';
     "XTerm*termName" = "xterm-256color";
   };

@@ -22,3 +22,32 @@ Subsequent updates:
 ```
 home-manager switch --flake .
 ```
+
+## Private configs
+
+Layer onto this with a private flake. For example:
+
+```nix
+# ~/.dotfiles-work/flake.nix
+{
+  inputs.dotfiles.url = "github:iank/dotfiles";
+  outputs = { dotfiles, ... }: {
+    homeConfigurations.work = dotfiles.lib.mkHome {
+      system = "x86_64-linux";
+      username = "work-username";
+      modules = [
+        dotfiles.homeModules.base
+        ./work.nix
+      ];
+    };
+  };
+}
+```
+
+```nix
+# ~/.dotfiles-work/work.nix
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [ whatever ];
+}
+```
