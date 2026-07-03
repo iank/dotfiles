@@ -22,9 +22,12 @@
     ruff
     nixfmt
     verible
+    gnupg
+    pinentry-tty
   ];
 
   home.file.".gitconfig.aliases".source = ./config/gitconfig.aliases;
+  home.file.".gnupg/gpg-agent.conf".soure = ./gnupg/gpg-agent.conf;
 
   home.file.".vimrc".source = ./config/vimrc;
   home.file.".config/fzf/key-bindings.bash".source = ./config/fzf/key-bindings.bash;
