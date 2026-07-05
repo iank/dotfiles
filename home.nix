@@ -12,12 +12,15 @@
 
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
+  };
 
   home.packages = with pkgs; [
     neovim
     tmux
-    git
-    git-lfs
     ripgrep
     fd
     fzf
@@ -32,7 +35,24 @@
     pinentry-tty
   ];
 
-  home.file.".gitconfig.aliases".source = ./config/gitconfig.aliases;
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+
+    includes = [
+      { path = ./config/gitconfig.aliases; }
+    ];
+
+    settings = {
+      init.defaultBranch = "main";
+      user = {
+        email = "iank@iank.org";
+        name = "Ian Kilgore";
+        signingkey = "322D8BD9D8743EF9";
+      };
+    };
+  };
+
   home.file.".gnupg/gpg-agent.conf".source = ./gnupg/gpg-agent.conf;
 
   home.file.".vimrc".source = ./config/vimrc;
@@ -68,10 +88,6 @@
     ];
     historyControl = [ "ignoreboth" ];
     initExtra = ''
-      if [ -f ~/.nix-profile/etc/profile.d/nix.sh ]; then
-        source ~/.nix-profile/etc/profile.d/nix.sh
-      fi
-
       # Show git branch status in terminal shell.
       . ~/.nix-profile/share/git/contrib/completion/git-prompt.sh
       . ~/.nix-profile/share/git/contrib/completion/git-completion.bash
