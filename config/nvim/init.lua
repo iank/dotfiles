@@ -19,6 +19,7 @@ vim.g.clipboard = {
 }
 
 vim.lsp.enable('verible')
+vim.lsp.enable('rust_analyzer')
 vim.diagnostic.config({
     virtual_text = true,
 })

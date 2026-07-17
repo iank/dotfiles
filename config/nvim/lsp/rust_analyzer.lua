@@ -1,0 +1,13 @@
+return {
+  cmd = { "rust-analyzer" },
+  filetypes = { "rust" },
+  root_markers = { "Cargo.toml" },
+  settings = {
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        enable = true,
+        command = "clippy",
+      },
+    },
+  },
+}
