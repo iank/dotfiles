@@ -33,6 +33,7 @@
     verible
     gnupg
     pinentry-tty
+    tio
   ];
 
   programs.git = {
